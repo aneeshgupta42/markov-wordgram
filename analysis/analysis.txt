@@ -1,4 +1,4 @@
-YOUR NAME and YOUR NETID
+Your Name and YOUR NETID
 
 Run WordGramDriver for wordgrams of size 2-10 and record
 the number of WordGram values/objects that occur more than

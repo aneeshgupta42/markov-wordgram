@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class WordGramDriver {
-	public final static int WSIZE = 3;
+	public final static int WSIZE = 10;
 
 	public static int benchmark(Set<WordGram> set, String filename) throws FileNotFoundException {
 		Scanner scan = new Scanner(new File(filename));

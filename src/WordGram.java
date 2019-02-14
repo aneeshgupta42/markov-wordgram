@@ -25,6 +25,8 @@ public class WordGram {
 		}
 		myToString = "";
 		myHash = 5;
+		//myToString = this.toString();
+		//myHash = this.hashCode();
 		
 		// TODO: initialize myWords and others as needed
 	}

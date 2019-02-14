@@ -13,10 +13,10 @@ public class WordGram {
 	private int myHash;         // cached hash value
 
 	/**
-	 * Create WordGram (add comments)
-	 * @param source
-	 * @param start
-	 * @param size
+	 * WordGram constructor, creates object
+	 * @param source (source array of Strings)
+	 * @param start  (where to start in the Array)
+	 * @param size   (What size WordGram object to build) 
 	 */
 	public WordGram(String[] source, int start, int size) {
 		myWords = new String[size];
@@ -42,8 +42,8 @@ public class WordGram {
 	}
 
 	/**
-	 * Complete this comment
-	 * @return
+	 * Returns the order (size) of the word gram object
+	 * @return len (number of strings in WordGram)
 	 */
 	public int length(){
 		// TODO: change this
@@ -83,9 +83,9 @@ public class WordGram {
 	
 
 	/**
-	 * Create and complete this comment
-	 * @param last is last String of returned WordGram
-	 * @return
+	 * Update last element of existing WordGram object
+	 * @param last
+	 * @return wg, which is new and updated object
 	 */
 	public WordGram shiftAdd(String last) {
 		int start=1;

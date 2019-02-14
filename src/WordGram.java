@@ -3,7 +3,7 @@
  * A WordGram represents a sequence of strings
  * just as a String represents a sequence of characters
  * 
- * @author YOUR NAME HERE
+ * @author Aneesh Gupta
  *
  */
 public class WordGram {
@@ -20,6 +20,9 @@ public class WordGram {
 	 */
 	public WordGram(String[] source, int start, int size) {
 		myWords = new String[size];
+		for(int i =0; i<size; i++) {
+			myWords[i]=source[start+i];
+		}
 		myToString = "";
 		myHash = 5;
 		
@@ -44,7 +47,8 @@ public class WordGram {
 	 */
 	public int length(){
 		// TODO: change this
-		return 0;
+		int len = this.myWords.length;
+		return len;
 	}
 
 
@@ -52,6 +56,16 @@ public class WordGram {
 	public boolean equals(Object o) {
 		if (! (o instanceof WordGram) || o == null){
 			return false;
+		}
+		WordGram other = (WordGram) o;
+		if(this.myWords.length != other.myWords.length) {
+			return false;
+		}
+		
+		for (int i=0; i<this.myWords.length; i++) {
+			if(!this.myWords[i].equals(other.myWords[i])) {
+				return false;
+			}
 		}
 
 	    // TODO: complete this method
@@ -61,6 +75,9 @@ public class WordGram {
 	@Override
 	public int hashCode(){
 		// TODO: complete this method
+		if (myHash == 5) {
+			myHash = this.toString().hashCode();
+		}
 		return myHash;
 	}
 	
@@ -71,14 +88,23 @@ public class WordGram {
 	 * @return
 	 */
 	public WordGram shiftAdd(String last) {
-		WordGram wg = new WordGram(myWords,0,myWords.length);
+		int start=1;
+		String[] temp= new String[myWords.length];
+		for (int i=0;i<myWords.length - 1;i++) {
+			temp[i]= this.myWords[start+i];
+		}
+		temp[myWords.length - 1]= last;
+		WordGram wg = new WordGram(temp,0,myWords.length);
 		// TODO: Complete this method
 		return wg;
 	}
 
 	@Override
 	public String toString(){
-		// TODO: Complete this method	
+		// TODO: Complete this method
+		if (myToString.equals("")) {
+			myToString = String.join(" ", myWords);	
+		}
 		return myToString;
 	}
 }
